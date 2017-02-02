@@ -15,7 +15,6 @@
         settings = $.extend({}, $.fn.vote.defaults, options);
 
         function handleStars(elem, voteValue) {
-            // console.log(elem);
             var rest = settings.stars;
             voteValue = Math.round(voteValue * 2) / 2;
             if (rest < voteValue) {
