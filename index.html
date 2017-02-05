@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <body>
+
+        <div  data-vote="4.5"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="vote.js"></script>
+        <script>
+            $(function() {
+                $('[data-vote]').vote({
+                    onVote: function(voteValue, el) {
+                        el.vote('update', 1);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

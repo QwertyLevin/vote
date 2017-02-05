@@ -21,7 +21,7 @@
                 return;
             }
 
-            var index;
+            var index = 0;
             while (voteValue >= 1) {
                 index = Math.floor(settings.stars - rest);
                 elem.children('i').eq(index).removeClass().addClass(settings.fullCls);
@@ -35,7 +35,7 @@
             }
 
             while (rest > 0) {
-                elem.children('i').eq(++index).removeClass().addClass(settings.emptyCls);
+                elem.children('i').eq(Math.floor(settings.stars - rest)).removeClass().addClass(settings.emptyCls);
                 rest--;
             }
         }

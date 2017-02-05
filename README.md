@@ -7,8 +7,9 @@ Example:
 ```html
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div  data-vote="3.25"/>
+<div data-vote="3.25"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="vote.js"></script>
 <script type="text/javascript">
 $(function() {
