@@ -41,18 +41,22 @@
         }
 
         return this.each(function() {
-            var value = settings.voteValue || $(this).data('vote');
-            var elem = $(this)
+            var value = $(this).data('vote') || settings.voteValue;
+            var elem = $(this);
+            var voteEnabled = !settings.voteDisabled;
 
             for (var i = settings.stars; i--;) {
                 elem.append($('<i/>'));
             }
 
             handleStars(elem, value);
-
             elem.css(settings.css);
 
-            if (!settings.voteDisabled) {
+            if (undefined != $(this).data('vote-disabled') && 1 == $(this).data('vote-disabled')) {
+                voteEnabled = false;
+            }
+
+            if (voteEnabled) {
                 elem.children('i').hover(function() {
                     handleStars(elem, $(this).index()+1);
                 }, function() {
